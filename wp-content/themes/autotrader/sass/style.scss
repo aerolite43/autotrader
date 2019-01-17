@@ -1,0 +1,632 @@
+@import "main";
+$colors: (
+	primary: #08a0e3,
+	light-text: #fff,
+	dark-text: black,
+);
+$header_color: #f1f1f1;
+$padding: 15px;
+$borders: 15px;
+@function color($color-name) {
+	@return map-get($colors, $color-name)
+}
+$screen1: 1920px;
+$screen2: 1240px;
+$screen3: 1068px;
+$screen4: 768px;
+$screen5: 600px;
+$screen6: 350px;
+@mixin screen1 {
+	@media only screen and (max-width: #{$screen1}){
+		@content;
+	}
+}
+@mixin screen2 {
+	@media only screen and (max-width: #{$screen2}){
+		@content;
+	}
+}
+@mixin screen3 {
+	@media only screen and (max-width: #{$screen3}){
+		@content;
+	}
+}
+@mixin screen4 {
+	@media only screen and (max-width: #{$screen4}){
+		@content;
+	}
+}
+@mixin screen5 {
+	@media only screen and (max-width: #{$screen5}) {
+		@content;
+	}
+}
+@mixin screen6 {
+	@media only screen and (max-width: #{$screen6}) {
+		@content;
+	}
+}
+body, html {
+	height: 100%;
+	width:100%;
+}
+body {
+	background:white;
+}
+body{
+	background: color(white); 
+	header {
+		div.sect-1 {
+			.flex-container {
+				padding-top: 20px;
+				div {
+					padding: 0;
+				}
+				div.logo_top {
+					width:300px;
+					@include screen4 {
+						width:auto;
+					}
+				}
+				div.info.banner {
+					@include screen4 {
+						width:auto;
+					}
+				}
+				div.banner {
+					text-align:center;
+				}
+				div#phonecall {
+					margin-top:5px;
+					a {
+						i {
+
+						}
+						span {
+							@include screen4 {
+								display: none;
+							}
+						}
+					}
+				}
+				i.icon-phone-dark {
+					color: color("light-text");
+					font-size: 12px;
+					
+				}
+				.click-phonecall-sent {
+					text-decoration:none;
+					background: color("primary");
+				    color: #005ebf;
+				    border: 2px solid color("primary");
+				    border-radius: 9px;
+				    box-shadow: none;
+				    font-size: 14px;
+				    margin: 0 0 0 30px;
+				    padding: 5px 17px 4px;
+				    position: relative;
+				    text-align: center;
+				    width: auto;
+				    float:right;
+				    box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+					-moz-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+					-webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+					-o-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+					@include screen6 {
+						    position: relative;
+						    left: 12px;
+						    top: -50px;
+					}
+
+				}
+			}
+		}
+		div.sect-2 {
+			.flex-container {
+				div#content_marketing {
+					width:650px; 
+					margin-right:50px;
+					h1 {
+						color:color("light-text");
+					}
+					@include screen2 {
+						margin-right:0px;
+					}
+				}
+				div#content_flyers {
+						width:320px;
+						z-index:1;
+					.flyers {
+						position: relative;
+						top: 0;
+						left: 0;
+					}
+					.img_track {
+						position: relative;
+						top: 0;
+						left: 0;
+					}
+					.img_buick_price_break {
+						position: absolute;
+						top: 60px;
+						left: 180px;
+						@include screen4 {
+							margin-left:3px;
+							left: 168px;
+							top: -5px;
+						}
+					}
+					.img_guelph_infinity {
+						position: absolute;
+						top: 203px;
+						left: -72px;
+						@include screen4 {
+							margin-left:120px;
+							left: -311px;
+							top: 86px;
+						}
+					}
+					@include screen4 {
+						margin-left:176px;
+					}
+				}
+			}
+		}
+		p, h4 {
+			color: color("light-text");
+		}
+		span.label-txt {
+			font-weight: 400;
+			font-size: 13px;
+			letter-spacing: 1px;
+			color: color("light-text");
+		}
+	}
+	.half-circle-bottom {
+		position:relative;
+		height: 100px;
+	    width: 100%;
+	    background-color: color("primary");
+	    border-bottom-left-radius: 50% 120%;
+	    border-bottom-right-radius: 50% 120%;
+	    border-bottom: 0;
+	    #learnhow{
+	    	color:white;
+	    	text-decoration:none;
+	    	font-weight:bold;
+	    	a{
+	    		color:white;
+	    	}
+	    	@include screen2 {
+	    		display:none;
+	    	}
+	    }
+	    @include screen3 {
+		    border-bottom-left-radius: 50%;
+			border-bottom-right-radius: 50%;
+	    }
+		#content2 {
+			position: absolute;
+			width: 100%;
+			z-index: -1;
+			.info_hidden {
+				height:90px;
+			}
+			.flex-container{
+				background-color: $header_color;
+				div.info {
+					width:300px;
+					padding-top:150px;
+					@include screen4 {
+						width:250px;
+						padding: 110px 0 0 0;
+					}
+					@include screen3 {
+						padding-top:20px;
+					}
+				}
+				@include screen4 {
+					div.border_right {
+						border-right: none;
+						border-bottom: 2px solid color("primary");
+						width:100%;
+					}
+					div.border_left {
+						border-left: none;
+						border-top: 2px solid color("primary");
+						width:100%;
+					}
+				}
+				@include screen3 {
+					div.border_left {
+						border-left: none;
+		
+					}
+				}
+			}
+			p {
+				text-align:center;
+			}
+		}
+	}
+	footer {
+		background-color:white;
+		.half-circle {
+			@include screen5 {
+			    border-top-left-radius: 10%;
+   		 		border-top-right-radius: 10%;
+			}
+			padding-bottom:50px;
+		 	.logo, .enterAutoTrader, .backAutoTrader {
+		    	display: flex;
+		    	justify-content: center;
+		    }
+		    .logo {
+		    	padding:25px 0 25px 0;
+		    	img {
+		    		width:15%;
+		    		height:10%;
+		    		margin-top:50px;
+		    		@include screen5 {
+		    			margin-top: 50px;
+		    			width:40%;
+		    		}
+		    		@include screen3 {
+		    			margin-top: 50px;
+		    			width:30%;
+		    		}
+		    	}
+		    }
+		    .enterAutoTrader {
+
+		    	a {
+					text-decoration:none;
+					background: #fff;
+				    color: color('primary');
+				    border-radius: 9px;
+				    font-size: 14px;
+				    margin: 0 0 0 30px;
+				    padding: 5px 17px 4px;
+				    position: relative;
+				    text-align: center;
+				    width: auto;
+		    	}
+		    	@include screen2 {
+		    		display:none;
+		    	}
+		    }
+		    .backAutoTrader {
+		    	a {
+		    		display:none;
+					text-decoration:none;
+					background: #fff;
+				    color: color('primary');
+				    border-radius: 9px;
+				    font-size: 14px;
+				    margin: 0 0 0 30px;
+				    padding: 5px 17px 4px;
+				    position: relative;
+				    text-align: center;
+				    width: auto;
+    		    	@include screen2 {
+			    		display:block;
+			    	}
+		    	}
+		    }
+		}
+		#sect-1 {
+			background-color: color("primary");
+			color: color("light-text");
+
+		    #address {
+		    	display: flex;
+		    	justify-content: center;
+		    	ul {
+	    			width:700px;
+				  	text-align: center;
+				  	list-style: inside;
+		    	}
+		    	li:first-child {
+		    		list-style-type: none; 
+		    	}
+		    	li {
+		    		padding-left: .5em;
+		    		padding-right: .5em;
+		    		font-size:12px;
+		    		float: left;
+		    	}
+		    }
+		}
+	}
+	.content p {
+		font-size:19px
+	}
+    #dynamic-inventory-advertising, #social_media_marketing {
+		@include screen4 {
+			#search-marketing-div-content{
+				order: 1;
+			}
+			#search-marketing-div-img{
+				order: 2;
+			}
+		}
+
+    }
+	#search-marketing {
+		padding-top: 192px;
+
+		@include screen3 {
+			padding-top: 350px;
+		}
+		@include screen4 {
+			padding-top: 420px;
+		}
+	}
+	#dynamic-inventory-advertising {
+	}
+	.responsive {
+	    width: 100%;
+	    height: auto;
+	}
+	.content .flex-container {
+		background-color:#fff;
+	}
+	.content .flex-container > h2, p {
+		color:color("dark-text");
+		text-align:left;
+	}
+	.content .flex-container > div {
+		width:500px;
+		@include screen2 {
+			width:400px;
+		}
+		@include screen3 {
+			width:300px;
+		}
+		@include screen4 {
+			width:250px;
+		}
+		@include screen5 {
+			width:400px;
+		}
+	}
+	#google-premier-partner {
+		.flex-container {
+			div#googleAllin1
+			{
+				display:none;
+				@include screen3 {
+					display:block;
+				}
+			}
+			#img_adwords_express, #img_leaderboard, #img_square, #img_skyscrapper {
+				@include screen3 {
+					display:none;
+				}
+			}
+			div#skyscrapper {
+				float:left;
+			}
+			div#square {
+				width:570px;
+			}
+		}
+	}
+	#social_media_marketing {
+		.flex-container {
+			#img_socialmarketing {
+				width:200%;
+			}
+		}
+		img#blueprintbadge {
+			padding-right:50px;
+			@include screen3 {
+				padding-right:0;
+			}
+		}
+		span#icon_insta {
+			padding-left:10px;
+		}
+	}
+	#additional_info {
+		text-align: center;
+		h3 {
+			width: 900px;
+		}
+	}
+	div#contact_form_container {
+		background-color:white;
+		padding-bottom: 200px;
+		input, textarea {
+			font-size:12px;
+		}
+		div.flex-container.flex-center {
+			background-color:#f2f2f2; 
+			width:50%; 
+			margin-left:auto; 
+			margin-right:auto; 
+			border-radius: 15px; 
+			box-shadow: 0px 0px 5px 5px grey;
+			padding-bottom:10px;
+			@include screen4 {
+				width:95%;
+			}
+			div {		
+					padding: 0;		
+					@include screen3 {
+					padding:0px;
+					padding-right:8px;				
+					}
+				}
+			.title {
+				width:70%; 
+				position:relative;
+				h2 {
+					width:500px;
+					@include screen3 {
+						width:auto;
+					}
+				}
+			}
+			.fname {
+				width:34%;
+				@include screen3 {
+					width:100%;
+				}
+			}
+			.phone {
+				width:35%;
+				@include screen3 {
+					width:100%;
+				}
+			}
+			.email {
+				width:70%;
+				@include screen3 {
+					width:100%;
+				}
+			}
+			.dealer_url {
+				width:49%;
+				@include screen3 {
+					width:100%;
+				}
+			}
+			.budget {
+				width:20%;
+				@include screen3 {
+					width:100%;
+				}
+			}
+			.comments {
+				width:70%;
+				@include screen3 {
+					width:100%;
+				}
+			}
+			.submit {
+				width:70%;
+				@include screen3 {
+					width:100%;
+				}
+			}
+			.submit_button {
+				background-color:color("primary");
+				-moz-border-radius:28px;
+				-webkit-border-radius:28px;
+				border-radius:28px;
+				display:inline-block;
+				cursor:pointer;
+				color:white;
+				font-family:Arial;
+				font-size:17px;
+				font-weight:bold;
+				padding:10px 18px;
+				text-decoration:none;
+				text-shadow:0px 1px 0px color("primary");
+			}
+		}
+		input[type=text], select, textarea {
+		    width: 100%;
+		    padding: 12px;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		    margin-top: 6px;
+		    margin-bottom: 16px;
+		    resize: vertical;
+		}
+		input[type=submit] {
+		    background-color: #4CAF50;
+		    color: color("light-text");
+		    padding: 12px 20px;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		}
+		input[type=submit]:hover {
+		    background-color: #45a049;
+		}
+		.form_container {
+		    padding:20px 20px 20px 20px;
+		    border-radius: 5px;
+		    background-color: #f2f2f2;
+		}
+	}
+}
+h1 {
+font-size: 1em;
+color: #fff;
+}
+p{
+	color: #fff;
+	font-size: 21px;
+}
+h4 {
+	font-size: 16px;
+	margin-bottom: 0;
+}
+.black {
+	color:black;
+}
+.sect-3 div > h4, p  {
+	text-align:center
+}
+.sect-3 .flex-container > div {
+	width: 300px;
+}
+.rounded {
+	background-color:color("primary");
+	width:100%;
+	height:50px;
+	border-bottom-left-radius:500px 40px;
+	border-bottom-right-radius:500px 40px; 
+	position:absolute; z-index: 1
+}
+.clear {
+	clear:both;
+}
+h2 {
+	font-size:22px;
+	color: color("primary");
+}
+h3 {
+	color: color("primary-dark");
+}
+.half-circle {
+    width: 100%;
+    background-color: color("primary");
+    border-top-left-radius: 50% 120%;
+    border-top-right-radius: 50% 120%;
+    border-bottom: 0;
+}
+.flex-container {
+  display: flex;
+  background-color: color("primary");
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flex-container > div {
+  margin-left: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+.border_right {
+	border-right: 2px solid color("primary");
+}
+.border_left {
+	border-left: 2px solid color("primary");
+}
+hr {
+	margin-top:-22px;
+	@include screen1 {
+		align: center;
+		width:1050px;
+		text-align:center; 
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@include screen3 {
+		margin-top:-20px;
+	}
+}
